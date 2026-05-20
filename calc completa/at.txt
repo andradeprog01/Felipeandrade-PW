@@ -1,5 +1,0 @@
-retirar 10% do n1
-criar um botão de lucro de 15%
-criar um botão de desconto de 3%
-se o valor do n1 for maior que 1000 aplicar desconto de 7%, se valor for menor ou igual a 500 aplicar lucro de 5%
-se valor for menor que 200 desejar "boa compra"
