@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviços Publicos Camargo Aranha</title>
+    <script
+      src="https://kit.fontawesome.com/1165876da6.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(224, 224, 245);
+        scroll-behavior: smooth;
+      }
+      .logo {
+        width: 95px;
+        height: 75px;
+        margin-left: 5px;
+        margin-top: 5px;
+      }
+      .navbar {
+        text-decoration: none;
+        align-items: space-between;
+        margin-left: 300px;
+        margin-top: -60px;
+        padding: 0;
+        background-color: transparent;
+      }
+      .navbar a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: rgb(7, 11, 59);
+        font-size: 25px;
+        background-color: #eaeaea;
+      }
+      fieldset {
+        background-color: #eaeaea;
+        border: none;
+      }
+      .insta {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        align-items: right;
+        margin-top: -50px;
+        margin-left: 1250px;
+      }
+      .main-img img {
+        width: 100%;
+        height: 700px;
+        margin-top: 14px;
+        border: 0;
+      }
+      .titulos h1 {
+        position: relative;
+        text-align: left;
+        margin-left: 50px;
+        color: white;
+        margin-top: -690px;
+        font-size: 50px;
+      }
+      .titulos h2 {
+        position: relative;
+        text-align: left;
+        margin-left: 50px;
+        color: #fdbc28;
+        margin-top: -10px;
+        font-size: 40px;
+      }
+      .texto p {
+        position: relative;
+        text-align: left;
+        margin-left: 50px;
+        margin-right: 700px;
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      .main-img.pro img {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        margin-top: -400px;
+        margin-left: 800px;
+        margin-right: 50px;
+        border: 0;
+      }
+      .espaco {
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+
+        position: relative;
+        z-index: 1;
+      }
+      .quadrado-1 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #083b6a;
+        margin-top: 280px;
+        border-radius: 30px;
+      }
+      .quadrado-2 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #fdbc28;
+        margin-top: -420px;
+        margin-left: 525px;
+        border-radius: 30px;
+      }
+      .quadrado-3 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #2439f5;
+        margin-top: -220px;
+        margin-left: 1050px;
+        border-radius: 30px;
+      }
+      .quadrado-1 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: larger;
+      }
+      .quadrado-1 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+      }
+      .quadrado-2 p {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30x;
+        margin-top: 30px;
+        font-size: larger;
+      }
+      .quadrado-2 h1 {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 220px;
+      }
+      .quadrado-3 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: larger;
+      }
+      .quadrado-3 h1 {
+        position: relative;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-4 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #fdbc28;
+        margin-top: 10px;
+        border-radius: 30px;
+      }
+      .quadrado-5 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #2439f5;
+        margin-left: 525px;
+        margin-top: -220px;
+        border-radius: 30px;
+      }
+      .quadrado-6 {
+        width: 33.33%;
+        height: 200px;
+        background-color: #083b6a;
+        margin-left: 1050px;
+        margin-top: -220px;
+        border-radius: 30px;
+      }
+      .quadrado-4 p {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 10px;
+        font-size: larger;
+      }
+      .quadrado-4 h1 {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-5 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 10px;
+        font-size: larger;
+      }
+      .quadrado-5 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-6 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 10px;
+        font-size: larger;
+      }
+      .quadrado-6 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .title h1 {
+        position: relative;
+        text-align: center;
+        color: #083b6a;
+        margin-top: 50px;
+        font-size: 40px;
+        margin-top: 150px;
+      }
+      .title {
+        position: relative;
+        border-bottom: 2px solid #fdbc28;
+        margin-left: 300px;
+        margin-right: 300px;
+        align-content: center;
+      }
+      .img-matriz {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .img-matriz img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: -1020px;
+      }
+      .quadrado-matriz {
+        width: 60%;
+        height: 1000px;
+        background-color: #083b6a;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+      .quadrado-7 {
+        width: 33.33%;
+        height: 200px;
+        margin-top: 50px;
+        background-color: #083b6a;
+        border-radius: 30px;
+      }
+      .quadrado-7 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 18px;
+      }
+      .quadrado-7 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-8 {
+        width: 33.33%;
+        height: 200px;
+        margin-left: 525px;
+        margin-top: -220px;
+        background-color: #fdbc28;
+        border-radius: 30px;
+      }
+      .quadrado-8 p {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 18px;
+      }
+      .quadrado-8 h1 {
+        position: relative;
+        color: #000000;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-9 {
+        width: 33.33%;
+        height: 200px;
+        margin-left: 1050px;
+        margin-top: -220px;
+        background-color: #2439f5;
+        border-radius: 30px;
+      }
+      .quadrado-9 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 18px;
+      }
+      .quadrado-9 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-10 {
+        width: 50%;
+        height: 300px;
+        margin-left: 0px;
+        margin-top: 10px;
+        background-color: #2439f5;
+        border-radius: 30px;
+      }
+      .quadrado-10 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      .quadrado-10 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .quadrado-11 {
+        width: 50%;
+        height: 300px;
+        margin-left: 825px;
+        margin-top: -320px;
+        background-color: #083b6a;
+        border-radius: 30px;
+      }
+      .quadrado-11 p {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      .quadrado-11 h1 {
+        position: relative;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+
+      footer {
+        background: #083b6a;
+        padding-top: 50px;
+        margin-top: 150px;
+      }
+      .container {
+        width: 1140px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      .footer-content {
+        width: 33.3%;
+        color: #ffffff;
+      }
+      h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .footer-content p {
+        width: 190px;
+        margin: auto;
+        padding: 7px;
+        color: rgb(255, 255, 255);
+      }
+      .footer-content ul {
+        text-align: center;
+        color: #ffffff;
+      }
+      .list {
+        padding: 0;
+        color: #ffffff;
+      }
+      .list li {
+        width: auto;
+        text-align: center;
+        list-style-type: none;
+        padding: 7px;
+        position: relative;
+        color: #ffffff;
+      }
+      .list li::before {
+        content: "";
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 100%;
+        width: 0;
+        height: 2px;
+        background: #ffffff;
+        transition-duration: 0.5s;
+      }
+      .list li:hover::before {
+        width: 70px;
+      }
+      .social-icons {
+        text-align: center;
+        padding: 0;
+      }
+      .social-icons li {
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+      }
+      .social-icons i {
+        color: rgb(255, 255, 255);
+        font-size: 25px;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: #2439f5;
+      }
+      .social-icons i:hover {
+        color: #00bfff;
+      }
+      .bottom-bar {
+        background: #00bfff;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+      .bottom-bar p {
+        color: #343434;
+        margin: 0;
+        font-size: 16px;
+        padding: 7px;
+      }
+      .footer-content a {
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .footer-content a:hover {
+        color: #00bfff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <fieldset>
+          <img
+            src="68c8f05b-d943-4087-a25a-975853a3d9e0.png"
+            alt="Logo Camargo Aranha"
+            class="logo"
+            id="curso"
+          />
+        </fieldset>
+
+        <nav class="navbar">
+          <a href="ca.html">Sobre</a>
+          <a
+            href="https://vestibulinho.etec.sp.gov.br/unidades-cursos/escola.asp?c=12"
+            >Cursos</a
+          >
+          <a href="#matriz">Matriz curricular</a>
+          <a href="#">Contato</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main-img">
+        <img src="fundo-serv.p.png" />
+      </div>
+      <div class="titulos">
+        <h1>CURSO</h1>
+        <h2>Técnico em Serviços Publicos</h2>
+      </div>
+      <div class="texto">
+        <p>
+          O curso de Serviços Públicos tem como objetivo formar profissionais
+          preparados para atuar na gestão e no atendimento das demandas da
+          população em órgãos governamentais e instituições públicas. Nele, o
+          estudante desenvolve conhecimentos sobre administração, legislação,
+          políticas públicas e práticas de cidadania, aprendendo a lidar com
+          processos burocráticos e a promover um serviço de qualidade à
+          comunidade. É uma área voltada para quem deseja contribuir diretamente
+          com o funcionamento do setor público e com o bem-estar social.
+        </p>
+      </div>
+      <div class="main-img pro">
+        <img
+          src="Regimes-Juridicos-de-Emprego-Publico-e-Lei-Geral-do-trabalho-em-Funcoes-Publicas.png"
+        />
+      </div>
+
+      <div class="espaco"></div>
+
+      <div class="quadrado-1">
+        <h1>METODOLOGIA</h1>
+        <p>
+          A metodologia do curso une teoria e prática, com estudos de caso e
+          projetos, preparando o aluno para atuar com ética e eficiência.
+        </p>
+      </div>
+      <div class="quadrado-2">
+        <h1>MERCADO DE TRABALHO</h1>
+        <p>
+          O técnico em Serviços Públicos atua na administração pública,
+          auxiliando na gestão e implementação de políticas públicas.
+        </p>
+      </div>
+
+      <div class="quadrado-3">
+        <h1>MOTIVOS PARA ESCOLHA</h1>
+        <p>
+          Estudar na Etec Camargo Aranha é unir teoria e prática e se preparar
+          para atuar eticamente no setor público.
+        </p>
+      </div>
+
+      <div class="quadrado-4">
+        <h1>AULAS</h1>
+        <p>
+          As aulas combinam teoria, prática e projetos para formar profissionais
+          críticos e capacitados para o setor público.
+        </p>
+      </div>
+
+      <div class="quadrado-5">
+        <h1>FAIXA SALARIAL</h1>
+        <p>
+          A remuneração inicial varia de R$ 1.689,27 a R$ 2.954,55, conforme o
+          porte da instituição e a região, com oportunidades de crescimento.
+        </p>
+      </div>
+
+      <div class="quadrado-6">
+        <h1>DISPONIBILIDADE</h1>
+        <p>
+          O curso está disponível para novas turmas conforme o calendário
+          oficial da instituição.
+        </p>
+      </div>
+      <div class="title">
+        <h1 id="matriz">Matriz curricular</h1>
+      </div>
+      <div class="quadrado-matriz"></div>
+
+      <div class="img-matriz">
+        <img src="pmds.png" />
+      </div>
+
+      <div class="quadrado-7">
+        <h1>BASE LEGAL</h1>
+        <p>
+          Fundamentado na LDB e nas normas do Conselho Estadual de Educação de
+          SP, garantindo qualidade e relevância.
+        </p>
+      </div>
+
+      <div class="quadrado-8">
+        <h1>CERTIFICADOS OBTIDOS</h1>
+        <p>
+          O curso concede certificado reconhecido pelo MEC, com possibilidade de
+          certificados complementares.
+        </p>
+      </div>
+
+      <div class="quadrado-9">
+        <h1>REGISTRO PROFISSIONAL</h1>
+        <p>
+          O técnico pode atuar em órgãos públicos, com ingresso via concurso,
+          sem necessidade de conselho profissional.
+        </p>
+      </div>
+
+      <div class="quadrado-10">
+        <h1>APROVEITAMENTO DE ESTUDOS</h1>
+        <p>
+          O curso técnico em Serviços Públicos da Etec Camargo Aranha permite
+          que alunos com conhecimentos prévios solicitem, no ato da matrícula, a
+          análise curricular para aproveitamento de estudos. Componentes
+          obrigatórios do curso deverão ser cursados por todos, garantindo a
+          formação completa e padronizada do técnico.
+        </p>
+      </div>
+
+      <div class="quadrado-11">
+        <h1>CONCLUSÃO</h1>
+        <p>
+          A conclusão do curso técnico em Serviços Públicos da Etec Camargo
+          Aranha requer a aprovação em todas as disciplinas do currículo, a
+          realização de atividades complementares e a entrega de um trabalho de
+          conclusão de curso, garantindo que o aluno esteja plenamente
+          capacitado para atuar no setor público.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h3>Entre em Contato</h3>
+          <p>Email:e012acad@cps.sp.gov.br</p>
+          <p>Telefone: (11) 2694-6733</p>
+          <p>Endereço:R. Marcial, 25 - Mooca, São Paulo - SP</p>
+        </div>
+        <div class="footer-content">
+          <h3>Retorne Para:</h3>
+          <ul class="list">
+            <li><a href="#curso">Home</a></li>
+            <li><a href="ca.html">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <h3>Siga-nos:</h3>
+          <ul class="social-icons">
+            <li>
+              <a
+                href="https://www.facebook.com/pages/ETEC-Professor-Camargo-Aranha/123064111048269?locale=gl_ES"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/eteccamargoaranha/?hl=pt-br"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://br.linkedin.com/school/etec-professor-camargo-aranha-sp/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p>© 2025 Etec Prof. Camargo Aranha — Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
