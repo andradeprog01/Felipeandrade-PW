@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha calculadora</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="calc">
+      <h1>Minha calculadora</h1>
+      primeiro número: <input type="number" id="n1" /><br /><br />
+      segundo número: <input type="number" id="n2" /><br /><br />
+      <button onclick="Somar()">Somar</button>
+      <button onclick="Subtrair()">Subtrair</button>
+      <button onclick="Multiplicar()">Multiplicar</button>
+      <button onclick="Dividir()">Dividir</button>
+      <button onclick="areaT()">Area Triangulo</button>
+      <button onclick="areaQ()">Area Quadrado</button>
+      <button onclick="IP()">Par ou Impar</button>
+      <br />
+      <h2>Resultado: <span id="resultado"></span></h2>
+    </div>
+
+    <div class="contas">
+      <h1>Contas/Compras</h1>
+      primeiro produto: <input type="number" id="p1" /><br /><br />
+      segundo produto: <input type="number" id="p2" /><br /><br />
+      <button onclick="P1()">Primeiro valor -10%</button>
+      <button onclick="lucro15()">Lucro 15%</button>
+      <button onclick="desc3()">Desconto 3%</button>
+      <button onclick="ifcont()">Condicional</button>
+      <h2>Resultado: <span id="resultPR"></span></h2>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
