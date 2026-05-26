@@ -1,0 +1,10 @@
+Aula sobre funçoes :
+
+exx:
+var a = parsefloat(float("entre com o valor do número A"))
+var b = parsefloat(float("entre com o valor do número B"))
+    function soma()
+    {
+        var soma = a + b ;
+        console.log("Valor da soma é de :",soma)
+    }
