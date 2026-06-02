@@ -1,0 +1,34 @@
+body {
+    margin: 0;                   
+    height: 100vh;              
+    display: flex;             
+    justify-content: center;    
+    align-items: center;        
+    background-color: #f5f5f5;  
+}
+.title {
+    display: flex;         
+    justify-content: center; 
+    align-items: center;     
+    gap: 15px;             
+    padding: 20px;         
+}
+#img-cart {
+    width: 40px;
+    height: auto;
+    display: flex;
+}
+.title table {
+    margin: 0 auto;
+    width: 50%;
+}
+.title td {
+    vertical-align: middle;
+    width: 200px;
+    height: 100px;
+}
+#img-cart {
+    width: 50px;
+    height: auto;
+    display: block;
+}
