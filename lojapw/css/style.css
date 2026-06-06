@@ -9,16 +9,29 @@
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
 }
-h1{
-    font-size: 50px;
-    color: black;
+.title {
+    background-color:black;
 }
+h1 {
+  animation: mudarCor 10s infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+@keyframes mudarCor {
+  0% { color :  rgb(20, 1, 71); }
+  50%  { color: rgb(0, 105, 143); }
+  100% { color: rgb(168, 223, 220); }
+}
+
 .prod{
     width: 100%;
     margin-top: 20px;
+    border-collapse: collapse;
+
 }
 .prod th, .prod td {
-  border: 1px solid black;
+ border: 1px solid black;
   text-align: center;
   vertical-align: middle;
   padding: 10px;
@@ -38,4 +51,38 @@ h1{
 .monitor {
     width: 200px;
     height: 200px;
+}
+h2 {
+    color: rgb(255, 255, 255);
+}
+.blacktd {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+.preco {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+.total {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+.btn-menos, .btn-mais {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    animation: mudarCor 10s infinite;
+    border: none;
+   
+    
 }
