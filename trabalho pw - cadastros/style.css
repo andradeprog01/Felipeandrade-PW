@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+:root {
+    --ink: #1E2A38;
+    --ink-soft: #5B6B7C;
+    --accent: #2F6F62;
+    --accent-dark: #234F45;
+    --danger: #B8493D;
+    --bg: #F4F6F5;
+    --surface: #FFFFFF;
+    --line: #E1E6E4;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 860px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.header spam {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.header #new {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.header #new:hover {
+    background: var(--accent-dark);
+}
+
+.divTable {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    background: #EDF1EF;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+th.acao,
+td.acao {
+    text-align: center;
+    width: 70px;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s ease;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #FAFBFA;
+}
+
+tbody td {
+    padding: 14px 18px;
+    font-size: 15px;
+}
+
+tbody button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--ink-soft);
+    padding: 6px;
+    border-radius: 6px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+td.acao:nth-of-type(4) button:hover {
+    color: var(--accent);
+    background: #E6EFEC;
+}
+
+td.acao:nth-of-type(5) button:hover {
+    color: var(--danger);
+    background: #F6E9E7;
+}
+
+/* Modal */
+
+.modal-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 28, 24, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--surface);
+    width: 100%;
+    max-width: 380px;
+    border-radius: 10px;
+    padding: 28px 26px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+.modal label:first-of-type {
+    margin-top: 0;
+}
+
+.modal input {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.modal input:focus {
+    border-color: var(--accent);
+}
+
+.modal #btnSalvar {
+    margin-top: 22px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.modal #btnSalvar:hover {
+    background: var(--accent-dark);
+}
+
+/* Responsivo */
+
+@media (max-width: 640px) {
+    .header spam {
+        font-size: 21px;
+    }
+
+    thead th:nth-child(2),
+    tbody td:nth-child(2) {
+        display: none;
+    }
+
+    tbody td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}
