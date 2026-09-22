@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Comandos SQL — Portal BD</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<!-- Logo -->
+						<h1><a href="index.html">Portal BD</a></h1>
+					<!-- Nav -->
+						<nav id="nav"><ul><li><a href="index.html">Home</a></li><li><a href="modelacao.html">Modelação de Dados</a><ul><li><a href="modelacao.html#conceitual">Modelo Conceitual</a></li><li><a href="modelacao.html#logico">Modelo Lógico</a></li><li><a href="modelacao.html#fisico">Modelo Físico</a></li></ul></li><li><a href="diagramas.html">Diagramas ER</a><ul><li><a href="diagramas.html#entidades">Entidades</a></li><li><a href="diagramas.html#cardinalidade">Cardinalidade</a></li><li><a href="diagramas.html#chaves">Chaves (PK/FK)</a></li></ul></li><li class="current"><a href="sql.html">Comandos SQL</a><ul><li><a href="sql.html#mysql">MySQL (XAMPP)</a></li><li><a href="sql.html#sqlserver">SQL Server</a></li></ul></li><li><a href="sobre.html">Sobre a ETEC</a></li></ul></nav>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium imp-medium">
+
+								<article class="box post" id="mysql">
+									<header>
+										<h2>MySQL (XAMPP)</h2>
+										<p>Sintaxe usada no phpMyAdmin / linha de comando do XAMPP</p>
+									</header>
+									<div class="code-block">
+										<span class="lang-tag mysql">MySQL</span>
+										<pre><code>-- Criando a tabela
+CREATE TABLE aluno (
+    id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE
+);
+
+-- Inserindo dados
+INSERT INTO aluno (nome, email)
+VALUES ('Maria Silva', 'maria@etec.sp.gov.br');
+
+-- Consulta com JOIN e LIMIT
+SELECT a.nome, t.nome AS turma
+FROM aluno a
+JOIN turma t ON a.id_turma = t.id_turma
+LIMIT 10;</code></pre>
+									</div>
+								</article>
+
+								<article class="box post" id="sqlserver">
+									<header>
+										<h2>SQL Server (T-SQL)</h2>
+										<p>Sintaxe usada no SQL Server Management Studio (SSMS)</p>
+									</header>
+									<div class="code-block">
+										<span class="lang-tag sqlserver">SQL Server</span>
+										<pre><code>-- Criando a tabela
+CREATE TABLE aluno (
+    id_aluno INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE
+);
+
+-- Inserindo dados
+INSERT INTO aluno (nome, email)
+VALUES ('Maria Silva', 'maria@etec.sp.gov.br');
+
+-- Consulta com JOIN e TOP
+SELECT TOP 10 a.nome, t.nome AS turma
+FROM aluno a
+JOIN turma t ON a.id_turma = t.id_turma;</code></pre>
+									</div>
+								</article>
+
+								<article class="box post">
+									<header>
+										<h2>Principais diferenças</h2>
+									</header>
+									<table>
+										<thead>
+											<tr><th>Recurso</th><th>MySQL</th><th>SQL Server</th></tr>
+										</thead>
+										<tbody>
+											<tr><td>Auto-incremento</td><td><code>AUTO_INCREMENT</code></td><td><code>IDENTITY(1,1)</code></td></tr>
+											<tr><td>Limitar linhas</td><td><code>LIMIT 10</code></td><td><code>TOP 10</code></td></tr>
+											<tr><td>Aspas de identificador</td><td>Crases <code>`nome`</code></td><td>Colchetes <code>[nome]</code></td></tr>
+											<tr><td>Concatenar texto</td><td><code>CONCAT(a, b)</code></td><td><code>a + b</code></td></tr>
+										</tbody>
+									</table>
+								</article>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar / Cheat sheet -->
+									<section class="box index-box">
+										<header>
+											<h3>Atalhos desta página</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="#mysql"><i class="icon solid fa-database"></i>MySQL (XAMPP)</a></li>
+											<li><a href="#sqlserver"><i class="icon solid fa-database"></i>SQL Server</a></li>
+										</ul>
+									</section>
+									<section class="box index-box">
+										<header>
+											<h3>Chapa Rápida (Cheat Sheet)</h3>
+										</header>
+										<table class="entity-table">
+											<tr><td><code>SELECT</code></td><td>Consultar dados</td></tr>
+											<tr><td><code>INSERT</code></td><td>Inserir um registro</td></tr>
+											<tr><td><code>UPDATE</code></td><td>Alterar um registro</td></tr>
+											<tr><td><code>DELETE</code></td><td>Remover um registro</td></tr>
+											<tr><td><code>JOIN</code></td><td>Unir tabelas relacionadas</td></tr>
+											<tr><td><code>WHERE</code></td><td>Filtrar linhas</td></tr>
+											<tr><td><code>GROUP BY</code></td><td>Agrupar resultados</td></tr>
+										</table>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 col-12-medium">
+							<section>
+								<header>
+									<h2>Sobre este Portal</h2>
+								</header>
+								<p>
+									Este site foi desenvolvido como projeto de estudos da disciplina de
+									<strong>Banco de Dados</strong>, no curso Técnico em Desenvolvimento de Sistemas
+									da <strong>Etec Professor Camargo Aranha</strong>. Todo o conteúdo é
+									<strong>estático</strong> e didático &mdash; não existe um banco de dados
+									real funcionando por trás desta página, apenas exemplos organizados para
+									consulta e revisão.
+								</p>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Navegue pelo Portal</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="modelacao.html">Modelação de Dados</a></li>
+									<li><a href="diagramas.html">Diagramas ER</a></li>
+									<li><a href="sql.html">Comandos SQL</a></li>
+									<li><a href="sobre.html">Sobre a ETEC</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-12">
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Portal de Estudos de Banco de Dados &mdash; Etec Professor Camargo Aranha.</li>
+									<li>Template original: <a href="http://html5up.net">HTML5 UP</a> (Dopetrope), adaptado para fins educacionais.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

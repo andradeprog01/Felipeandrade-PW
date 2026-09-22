@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Modelação de Dados — Portal BD</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<!-- Logo -->
+						<h1><a href="index.html">Portal BD</a></h1>
+					<!-- Nav -->
+						<nav id="nav"><ul><li><a href="index.html">Home</a></li><li class="current"><a href="modelacao.html">Modelação de Dados</a><ul><li><a href="modelacao.html#conceitual">Modelo Conceitual</a></li><li><a href="modelacao.html#logico">Modelo Lógico</a></li><li><a href="modelacao.html#fisico">Modelo Físico</a></li></ul></li><li><a href="diagramas.html">Diagramas ER</a><ul><li><a href="diagramas.html#entidades">Entidades</a></li><li><a href="diagramas.html#cardinalidade">Cardinalidade</a></li><li><a href="diagramas.html#chaves">Chaves (PK/FK)</a></li></ul></li><li><a href="sql.html">Comandos SQL</a><ul><li><a href="sql.html#mysql">MySQL (XAMPP)</a></li><li><a href="sql.html#sqlserver">SQL Server</a></li></ul></li><li><a href="sobre.html">Sobre a ETEC</a></li></ul></nav>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								<section>
+									<header class="major">
+										<h2>O que é Modelação de Dados?</h2>
+									</header>
+									<p>
+										Modelar dados é o processo de organizar as informações de um sistema
+										<strong>antes</strong> de criar o banco de dados de verdade. Passamos por
+										três níveis de abstração, do mais próximo do "mundo real" ao mais
+										próximo do computador:
+									</p>
+									<table>
+										<thead>
+											<tr>
+												<th>Nível</th>
+												<th>O que representa</th>
+												<th>Exemplo prático</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>Conceitual</strong></td>
+												<td>Visão geral do negócio, sem detalhes técnicos. Foca em entidades e relacionamentos.</td>
+												<td>"Um Aluno se matricula em uma Turma."</td>
+											</tr>
+											<tr>
+												<td><strong>Lógico</strong></td>
+												<td>Define atributos, tipos de dado e chaves &mdash; ainda independe do SGBD usado.</td>
+												<td>ALUNO(id, nome, email) relacionado com TURMA(id, nome)</td>
+											</tr>
+											<tr>
+												<td><strong>Físico</strong></td>
+												<td>Implementação real: nomes de colunas, tipos exatos do SGBD, índices, constraints.</td>
+												<td><code>CREATE TABLE aluno (id INT PRIMARY KEY, nome VARCHAR(100));</code></td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+
+							</div>
+
+							<div class="col-12">
+								<section id="conceitual">
+									<span class="level-tag conceitual">Nível 1</span>
+									<header class="major">
+										<h2>Modelo Conceitual</h2>
+									</header>
+									<p>É a etapa da "conversa com o cliente". Aqui identificamos:</p>
+									<ul>
+										<li><strong>Entidades</strong> &mdash; os "substantivos" do sistema (Aluno, Curso, Professor)</li>
+										<li><strong>Atributos</strong> &mdash; as características de cada entidade (nome, idade)</li>
+										<li><strong>Relacionamentos</strong> &mdash; como as entidades se conectam (Aluno <em>cursa</em> Disciplina)</li>
+									</ul>
+									<p>Nesta fase ainda não nos preocupamos com tipos de dado, SGBD ou performance &mdash; só com o significado das informações.</p>
+								</section>
+							</div>
+
+							<div class="col-12">
+								<section id="logico">
+									<span class="level-tag logico">Nível 2</span>
+									<header class="major">
+										<h2>Modelo Lógico</h2>
+									</header>
+									<p>
+										Traduzimos as entidades do modelo conceitual em <strong>tabelas</strong>, com
+										colunas, tipos de dado genéricos e as chaves que vão ligar as tabelas entre si.
+									</p>
+									<table>
+										<thead>
+											<tr><th>Tabela</th><th>Coluna</th><th>Tipo</th><th>Observação</th></tr>
+										</thead>
+										<tbody>
+											<tr><td rowspan="3">ALUNO</td><td>id_aluno</td><td>Inteiro</td><td>Chave primária (PK)</td></tr>
+											<tr><td>nome</td><td>Texto</td><td>Obrigatório</td></tr>
+											<tr><td>id_turma</td><td>Inteiro</td><td>Chave estrangeira (FK) &rarr; TURMA</td></tr>
+										</tbody>
+									</table>
+								</section>
+							</div>
+
+							<div class="col-12">
+								<section id="fisico">
+									<span class="level-tag fisico">Nível 3</span>
+									<header class="major">
+										<h2>Modelo Físico</h2>
+									</header>
+									<p>
+										É a implementação final, escrita na linguagem do SGBD escolhido
+										(MySQL, SQL Server, PostgreSQL...). Cada SGBD tem pequenas diferenças de
+										sintaxe &mdash; veja a página de <a href="sql.html">Comandos SQL</a> para
+										comparar MySQL e SQL Server lado a lado.
+									</p>
+									<pre><code>CREATE TABLE aluno (
+    id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    id_turma INT,
+    FOREIGN KEY (id_turma) REFERENCES turma(id_turma)
+);</code></pre>
+									<footer>
+										<ul class="actions">
+											<li><a href="diagramas.html" class="button">Ver isso em um Diagrama ER</a></li>
+										</ul>
+									</footer>
+								</section>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 col-12-medium">
+							<section>
+								<header>
+									<h2>Sobre este Portal</h2>
+								</header>
+								<p>
+									Este site foi desenvolvido como projeto de estudos da disciplina de
+									<strong>Banco de Dados</strong>, no curso Técnico em Desenvolvimento de Sistemas
+									da <strong>Etec Professor Camargo Aranha</strong>. Todo o conteúdo é
+									<strong>estático</strong> e didático &mdash; não existe um banco de dados
+									real funcionando por trás desta página, apenas exemplos organizados para
+									consulta e revisão.
+								</p>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Navegue pelo Portal</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="modelacao.html">Modelação de Dados</a></li>
+									<li><a href="diagramas.html">Diagramas ER</a></li>
+									<li><a href="sql.html">Comandos SQL</a></li>
+									<li><a href="sobre.html">Sobre a ETEC</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-12">
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Portal de Estudos de Banco de Dados &mdash; Etec Professor Camargo Aranha.</li>
+									<li>Template original: <a href="http://html5up.net">HTML5 UP</a> (Dopetrope), adaptado para fins educacionais.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

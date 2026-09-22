@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Diagramas ER — Portal BD</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<!-- Logo -->
+						<h1><a href="index.html">Portal BD</a></h1>
+					<!-- Nav -->
+						<nav id="nav"><ul><li><a href="index.html">Home</a></li><li><a href="modelacao.html">Modelação de Dados</a><ul><li><a href="modelacao.html#conceitual">Modelo Conceitual</a></li><li><a href="modelacao.html#logico">Modelo Lógico</a></li><li><a href="modelacao.html#fisico">Modelo Físico</a></li></ul></li><li class="current"><a href="diagramas.html">Diagramas ER</a><ul><li><a href="diagramas.html#entidades">Entidades</a></li><li><a href="diagramas.html#cardinalidade">Cardinalidade</a></li><li><a href="diagramas.html#chaves">Chaves (PK/FK)</a></li></ul></li><li><a href="sql.html">Comandos SQL</a><ul><li><a href="sql.html#mysql">MySQL (XAMPP)</a></li><li><a href="sql.html#sqlserver">SQL Server</a></li></ul></li><li><a href="sobre.html">Sobre a ETEC</a></li></ul></nav>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar / Indice -->
+									<section class="box index-box">
+										<header>
+											<h3>Nesta página</h3>
+										</header>
+										<ul class="divided">
+											<li><a href="#entidades"><i class="icon solid fa-cube"></i>Entidades e Atributos</a></li>
+											<li><a href="#cardinalidade"><i class="icon solid fa-arrows-alt-h"></i>Cardinalidade</a></li>
+											<li><a href="#chaves"><i class="icon solid fa-key"></i>Chaves (PK/FK)</a></li>
+										</ul>
+									</section>
+									<section class="box index-box">
+										<header>
+											<h3>Legenda</h3>
+										</header>
+										<p style="font-size:0.9em;">
+											<strong style="color:#e67e22;">PK</strong> = Chave Primária (identifica cada linha de forma única)<br/>
+											<strong style="color:#2980b9;">FK</strong> = Chave Estrangeira (aponta para outra tabela)
+										</p>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<article class="box post" id="entidades">
+									<header>
+										<h2>Entidades e Atributos</h2>
+										<p>O bloco básico de todo Diagrama ER</p>
+									</header>
+									<p>
+										Como o Portal é estático, representamos cada <strong>entidade</strong> como
+										um cartão, no estilo de uma "mini tabela", mostrando o nome da entidade e
+										suas colunas. Veja um exemplo de relacionamento <strong>Aluno &rarr; Turma</strong>:
+									</p>
+
+									<div class="row">
+										<div class="col-5 col-12-small">
+											<section class="box entity">
+												<header>
+													<h3><i class="icon solid fa-table"></i> ALUNO</h3>
+												</header>
+												<table class="entity-table">
+													<tr class="pk"><td>PK</td><td>id_aluno</td><td>INT</td></tr>
+													<tr><td></td><td>nome</td><td>VARCHAR(100)</td></tr>
+													<tr><td></td><td>email</td><td>VARCHAR(150)</td></tr>
+													<tr class="fk"><td>FK</td><td>id_turma</td><td>INT</td></tr>
+												</table>
+											</section>
+										</div>
+										<div class="col-2 col-12-small">
+											<div class="relation-arrow">
+												<i class="icon solid fa-long-arrow-alt-right fa-2x"></i>
+												<span class="cardinality">N : 1</span>
+											</div>
+										</div>
+										<div class="col-5 col-12-small">
+											<section class="box entity">
+												<header>
+													<h3><i class="icon solid fa-table"></i> TURMA</h3>
+												</header>
+												<table class="entity-table">
+													<tr class="pk"><td>PK</td><td>id_turma</td><td>INT</td></tr>
+													<tr><td></td><td>nome</td><td>VARCHAR(50)</td></tr>
+													<tr><td></td><td>periodo</td><td>VARCHAR(20)</td></tr>
+												</table>
+											</section>
+										</div>
+									</div>
+									<p style="font-size:0.9em;color:#777;">
+										Dica: para diagramas com muitas entidades cruzadas, desenhe no
+										<a href="https://app.diagrams.net" target="_blank" rel="noopener">draw.io</a> ou no
+										<a href="https://dbdiagram.io" target="_blank" rel="noopener">dbdiagram.io</a>, exporte como
+										imagem e insira na pasta <code>images/</code> usando a classe <code>image featured</code>
+										do template.
+									</p>
+								</article>
+
+								<article class="box post" id="cardinalidade">
+									<header>
+										<h2>Cardinalidade</h2>
+										<p>Quantas ocorrências de uma entidade se relacionam com a outra</p>
+									</header>
+									<table>
+										<thead>
+											<tr><th>Tipo</th><th>Significado</th><th>Exemplo</th></tr>
+										</thead>
+										<tbody>
+											<tr><td><strong>1 : 1</strong></td><td>Um registro se relaciona com exatamente um do outro lado</td><td>Uma Pessoa tem um Passaporte</td></tr>
+											<tr><td><strong>1 : N</strong></td><td>Um registro se relaciona com vários do outro lado</td><td>Uma Turma tem vários Alunos</td></tr>
+											<tr><td><strong>N : N</strong></td><td>Vários registros de um lado se relacionam com vários do outro</td><td>Alunos cursam várias Disciplinas</td></tr>
+										</tbody>
+									</table>
+								</article>
+
+								<article class="box post" id="chaves">
+									<header>
+										<h2>Chaves (PK / FK)</h2>
+										<p>O que garante a integridade entre as tabelas</p>
+									</header>
+									<p>
+										<strong>Chave Primária (PK)</strong> identifica cada linha de uma tabela de
+										forma única &mdash; nunca se repete e nunca fica vazia.
+										<strong>Chave Estrangeira (FK)</strong> é uma coluna que aponta para a
+										chave primária de outra tabela, criando o vínculo entre elas.
+									</p>
+									<footer>
+										<ul class="actions">
+											<li><a href="sql.html" class="button">Ver isso em SQL</a></li>
+										</ul>
+									</footer>
+								</article>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 col-12-medium">
+							<section>
+								<header>
+									<h2>Sobre este Portal</h2>
+								</header>
+								<p>
+									Este site foi desenvolvido como projeto de estudos da disciplina de
+									<strong>Banco de Dados</strong>, no curso Técnico em Desenvolvimento de Sistemas
+									da <strong>Etec Professor Camargo Aranha</strong>. Todo o conteúdo é
+									<strong>estático</strong> e didático &mdash; não existe um banco de dados
+									real funcionando por trás desta página, apenas exemplos organizados para
+									consulta e revisão.
+								</p>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section>
+								<header>
+									<h2>Navegue pelo Portal</h2>
+								</header>
+								<ul class="divided">
+									<li><a href="modelacao.html">Modelação de Dados</a></li>
+									<li><a href="diagramas.html">Diagramas ER</a></li>
+									<li><a href="sql.html">Comandos SQL</a></li>
+									<li><a href="sobre.html">Sobre a ETEC</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-12">
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Portal de Estudos de Banco de Dados &mdash; Etec Professor Camargo Aranha.</li>
+									<li>Template original: <a href="http://html5up.net">HTML5 UP</a> (Dopetrope), adaptado para fins educacionais.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
